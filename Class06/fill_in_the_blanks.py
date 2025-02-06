@@ -34,15 +34,15 @@ plt.plot(... , ... , marker = ..., color ='', markersize = ..., alpha= ... )
 plt.gca().invert_yaxis()
 
 ## label your axes
-plt.xlabel("What are we plotting?", fontsize=..)
-plt.ylabel("...", fontsize=...)
+plt.xlabel("What are we plotting?", fontsize=...)
+plt.ylabel(..., fontsize=...)
 
-plt.title('How about a good title for this figure?', fontsize=...)
+plt.title(..., fontsize=...)
 
 ## we can enforce plot limits
 plt.xlim(... , ...)
 
 ## RECALL that we have inverted the y-axis above...
-plt.ylim(... , ...)
+
 
 
