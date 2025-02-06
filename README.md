@@ -39,10 +39,13 @@ Explain how to use the project. Provide examples, screenshots, or code snippets 
 Encourage others to contribute to your project. Provide guidelines for submitting issues, pull requests, or suggestions. We are developing open-source tools! One of the main benefits of GitHub is that it allows contributions from and use by anyone who can see the repository (without allowing random people to delete your code).
 
 Example:
+
 Contributions are welcome! Please follow these steps:
 
 (1) Fork the repository.
+
 (2) Create a new branch for your feature or bugfix.
+
 (3) Submit a pull request with a detailed description of your changes.
 
 ## License
