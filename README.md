@@ -53,3 +53,7 @@ Specify the license under which your project is distributed. This helps others u
 
 ## Acknowledgments
 Give credit to any resources, libraries, or individuals that helped you build the project.
+
+Example:
+
+M Joyce thanks Eliza Frankel and Josh Wanninger for reminding her how to store credentials
