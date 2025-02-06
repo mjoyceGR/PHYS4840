@@ -1,11 +1,15 @@
 
 ## np.where() returns an ARRAY OF INDICES that satisfy the prescribed condition
-## in the line below, we are finding all indices where the "red" array is > -99
-quality_cut_red = np.where(red > -99)
+## in the line below, we are finding all indices where the "red" array is > 5
+quality_cut_red = np.where(red > 5)
+
+## the quality cut we really want, however, is to exclude all of those
+## entries that have been assigned a value of "-99" in the data file
+## What would that look like?
 
 ## we can use np.where() with multiple conditions, like so:
-quality_cut = np.where( (red   > -99.)  &\
-					    (blue  > ... )  &\
+quality_cut = np.where( (red   > ...)  &\
+					    (...   > ...)  &\
 					    (...) )
 
 ## set a figure size
@@ -25,8 +29,6 @@ plt.plot(... , ... , marker = ..., color ='', markersize = ..., alpha= ... )
 ## navitage to 
 ##     https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html
 ## for a dictionary of options
-
-
 
 ## because astronomers are terrible, the magnitude system is reversed
 ## smaller numbers indicate brighter stars, so should be at the top of your plot
