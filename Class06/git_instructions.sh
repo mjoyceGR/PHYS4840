@@ -31,4 +31,4 @@ git add 'my_file.py'
 git commit -m "Initial commit of my_file.py"
 
 ## push the commit to the main branch
-git push origin master
+git push origin
