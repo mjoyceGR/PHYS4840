@@ -2,7 +2,8 @@
 #
 # Issue these commands one by one in the terminal
 # Do not run this file as a script!
-# See the 
+# See how_to_set_github_credentials.pdf for instructions
+# on personal access tokens
 #
 # Author: M Joyce
 #
