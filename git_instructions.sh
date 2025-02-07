@@ -11,7 +11,9 @@
 
 ## navigate to the repository on your computer that
 ## you want to link with your PHYS4840 repository on GitHub
-git init -b main
+git init 
+
+git checkout -b main
 
 ## change this url to YOUR github repo address
 git remote add origin https://github.com/mjoyceGR/PHYS4840.git
@@ -41,7 +43,8 @@ git branch --show-current  # Should return "main"
 ## set your upstream branch to "main" to avoid 
 ## pushing to "master" by accident
 git branch --set-upstream-to=origin/main main
-
+## should return:
+#	Branch 'main' set up to track remote branch 'main' from 'origin'.
 
 
 ## prepare a file for subimssion; aka "track" the file
@@ -51,10 +54,26 @@ git add 'my_file.py'
 ## commit the file and DESCRIBE what you are doing
 git commit -m "I am committing my_file.py because ..."
 
-
 ## as part of completing the "push" step, you will have to
 ## generate your personal access token and enter your login credentials
 ## follow the instructions on my slide (Lecture 6) to do this
 
 ## push the commit to the main branch
 git push origin
+
+
+#----------------------------------------------------------------
+#
+# TROUBLESHOOTING
+#
+# If you keep encountering issues, REMOVE git from your
+# directory on your computer and restart this protocol
+# from the beginning. Here are the steps to un-git a repository
+#
+#----------------------------------------------------------------
+
+## (1) navigate to the repository you want to un-git in the terminal
+## (2) issue the following commands:
+rm -rf .git
+rm -rf .gitignore
+
