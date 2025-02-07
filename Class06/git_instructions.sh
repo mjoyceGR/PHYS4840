@@ -46,4 +46,4 @@ git commit -m "I am committing my_file.py because ..."
 ## follow the instructions on my slide (Lecture 6) to do this
 
 ## push the commit to the main branch
-git push -u origin main
+git push origin
