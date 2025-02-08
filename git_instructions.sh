@@ -61,7 +61,6 @@ git commit -m "I am committing my_file.py because ..."
 ## push the commit to the main branch
 git push origin
 
-
 #----------------------------------------------------------------
 #
 # TROUBLESHOOTING
