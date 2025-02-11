@@ -7,8 +7,8 @@
 import numpy as np
 import sys
 
-sys.path.append('../')
-import my_functions_lib as mfl
+# sys.path.append('../')
+# import my_functions_lib as mfl
 
 
 filename = '../Class06/NGC6341.dat'
