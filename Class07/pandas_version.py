@@ -4,7 +4,6 @@
 # Author: M Joyce
 #
 ####################################################
-
 import pandas as pd
 
 filename = '../Class06/NGC6341.dat'
@@ -26,3 +25,5 @@ green = green.to_numpy()
 red = red.to_numpy()
 
 print("len(green):", len(green))
+
+
