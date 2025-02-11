@@ -9,21 +9,20 @@ import numpy as np
 import sys
 import pandas as pd
 
-
-
-
+### where is this file located for you?
+### be careful with file organization!!
+filename = '../Class06/NGC6341.dat'
 
 ###################################################
 #
 # testing np.loadtxt()
 #
 ###################################################
-import time
 """
 put the action you want to time between the
 star and end commands
 """
-filename = '../Class06/NGC6341.dat'
+
 start_numpy = time.perf_counter()
 
 
