@@ -1,4 +1,18 @@
+#################################################
+#
+# ----To perform a normal push to git----
+#
+#################################################
+## ALWAYS begin with
+git pull origin
+## or
+git pull origin main
+
+
+
 ##################################################
+#
+# ----To establish/overhaul git----
 #
 # Issue these commands one by one in the terminal
 # Do not run this file as a script!
@@ -48,7 +62,7 @@ git branch --set-upstream-to=origin/main main
 
 
 ## prepare a file for subimssion; aka "track" the file
-git add 'my_file.py'
+git add <name_of_your_file.py>
 
 
 ## commit the file and DESCRIBE what you are doing
@@ -76,3 +90,14 @@ git push origin
 rm -rf .git
 rm -rf .gitignore
 
+## if you have successfully removed .git and .gitingore, the command
+git status
+## should return
+## 		fatal: not a git repository (or any of the parent directories): .git
+##
+## if this is NOT returned, you may have recursive versions of git!
+## In this case, run
+##      find . -name ".git" -type d
+## 		find . -name ".gitignore" -type d
+##
+## and un-git the repositories this returns as well
