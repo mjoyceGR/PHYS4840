@@ -1,14 +1,33 @@
-#################################################
+######################################################
 #
-# ----To perform a normal push to git----
+# Author: M Joyce
 #
-#################################################
+######################################################
+#
+# ----Performing a normal push/pull cycle with git----
+#
+######################################################
 ## ALWAYS begin with
+git status
+## if this returns
+	# 		On branch main
+	#	    Your branch is up to date with 'origin/main'.
+#
+## then it is safe to issue 
 git pull origin
 ## or
 git pull origin main
 
+## Once you are confident that your brance is up to date
+## with the remote (website) version of your repository,
+## a normal push protocol looks like this:
 
+git status ## check what's going on
+git add <my_file.py>
+git commit -m "useful commit message about my_file.py"
+git push origin
+## OR 
+#	 git push origin main
 
 ##################################################
 #
@@ -18,8 +37,6 @@ git pull origin main
 # Do not run this file as a script!
 # See how_to_set_github_credentials.pdf for instructions
 # on personal access tokens
-#
-# Author: M Joyce
 #
 #################################################
 
