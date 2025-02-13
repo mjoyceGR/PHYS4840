@@ -10,13 +10,9 @@ import sys
 
 ################################################
 #
-# Homework 2 problem 1 help
-# Part 2
-#
-# Now, let's compare this to the HST data 
+# How to align models to data
 #
 #################################################
-
 
 '''
 This code block loads and cleans the theoretical models from
@@ -57,12 +53,6 @@ Now, recall how we loaded, cleaned, and plotted NGC6341.dat
 '''
 filename = '../Class06/NGC6341.dat'
 
-## # Col.  9: F336W calibrated magnitude
-## # Col. 15: F438W calibrated magnitude
-## # Col. 27: F814W calibrated magnitude
-## # Col. 33: membership probability
-## but Python indexes from 0, not 1!
-
 blue, green, red, probability = np.loadtxt(filename, usecols=(8, 14, 26, 32), unpack=True)
 
 magnitude = blue
@@ -73,20 +63,6 @@ quality_cut = np.where( (red   > -99.) &\
 					    (green > -99)  &\
 					    (probability != -1))
  
-print("quality_cut: ", quality_cut )
-
-
-fig, ax = plt.subplots(figsize=(8,16))
-
-plt.plot(color[quality_cut], magnitude[quality_cut], "k.", markersize = 4, alpha = 0.2)
-plt.gca().invert_yaxis()
-plt.xlabel("Color: B-R", fontsize=20)
-plt.ylabel("Magnitude: B", fontsize=20)
-plt.title('Hubble Space Telescope Data for\nthe Globular Cluster NGC6341', fontsize=22)
-plt.xlim(-2, 5)
-plt.ylim(25,13.8)
-plt.show()
-plt.close()
 
 ##################################
 #
@@ -96,7 +72,7 @@ plt.close()
 
 #####################################################################################
 
-fig, axes = plt.subplots(1, 3, figsize=(14, 6))  # 3 panels side by side
+fig, axes = plt.subplots(1, 2, figsize=(10, 6))  # 3 panels side by side
 
 #########################################################
 #
@@ -116,26 +92,21 @@ axes[0].plot(cleaned_color, cleaned_magnitude, 'go', markersize=2, linestyle='-'
 axes[0].invert_yaxis()
 axes[0].set_xlabel('Color', fontsize=18)
 axes[0].set_ylabel('Magnitude', fontsize=18)
+axes[0].set_title('Isochrone Model in\ncolor-magnitude coordinates', fontsize=16)
+axes[0].set_xlim(0.49, 2.1)
+axes[0].set_ylim(12, -2.1)
 format_axes(axes[0])
 
-# Second panel: Isochrone in theoretical coordinates
-axes[1].plot(cleaned_Teff, cleaned_logL, 'mo')
-axes[1].invert_xaxis()
-axes[1].set_xlabel('Teff (K)', fontsize=18)
-axes[1].set_ylabel('logL', fontsize=18)
-axes[1].set_xlim(7500, 2800)
+# Third panel: HST Data for globular cluster
+axes[1].plot(color[quality_cut], magnitude[quality_cut], "k.", markersize=4, alpha=0.2)
+axes[1].invert_yaxis()
+axes[1].set_xlabel("Color: B-R", fontsize=18)
+axes[1].set_ylabel("Magnitude: B", fontsize=18)
+axes[1].set_title('Hubble Space Telescope Data for\n the Globular Cluster NGC6341', fontsize=16)
+axes[1].set_xlim(-1, 4.2)
+axes[1].set_ylim(25, 13.8)
 format_axes(axes[1])
 
-# Third panel: HST Data for globular cluster
-axes[2].plot(color[quality_cut], magnitude[quality_cut], "k.", markersize=4, alpha=0.2)
-axes[2].invert_yaxis()
-axes[2].set_xlabel("Color: B-R", fontsize=18)
-axes[2].set_ylabel("Magnitude: B", fontsize=18)
-axes[2].set_title('Hubble Space Telescope Data for\n the Globular Cluster NGC6341', fontsize=16)
-axes[2].set_xlim(-2, 5)
-axes[2].set_ylim(25, 13.8)
-format_axes(axes[2])
-
 plt.tight_layout()
-plt.savefig("three_panel_CMD_figure.png", dpi=300)
+plt.savefig("isochrone_CMD_vs_data.png", dpi=300)
 plt.close()
