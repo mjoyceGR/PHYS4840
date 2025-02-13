@@ -110,3 +110,39 @@ format_axes(axes[1])
 plt.tight_layout()
 plt.savefig("isochrone_CMD_vs_data.png", dpi=300)
 plt.close()
+
+
+###################################################
+#
+# now the overlay
+#
+####################################################
+
+#import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots(figsize=(6, 9))  # Single panel
+
+def format_axes(ax):
+    ax.tick_params(axis='both', which='major', labelsize=14, length=6, width=1.5)  # Larger major ticks
+    ax.tick_params(axis='both', which='minor', labelsize=12, length=3, width=1)    # Minor ticks
+    ax.minorticks_on()  # Enable minor ticks
+
+# Plot Isochrone model
+ax.plot(cleaned_color, cleaned_magnitude, 'go', markersize=2, linestyle='-', label='Isochrone Model')
+
+# Plot HST Data
+ax.plot(color[quality_cut], magnitude[quality_cut], "k.", markersize=4, alpha=0.2, label='HST Data (NGC6341)')
+
+# Axis settings
+ax.invert_yaxis()
+ax.set_xlabel('Color', fontsize=18)
+ax.set_ylabel('Magnitude', fontsize=18)
+ax.set_title('Comparison of Isochrone Model and HST Data', fontsize=16)
+ax.set_xlim(0.2,2.5)
+ax.set_ylim(25,-3)
+format_axes(ax)
+#ax.legend(fontsize=14, loc='best')
+
+plt.tight_layout()
+plt.savefig("overlay.png", dpi=300)
+plt.close()
