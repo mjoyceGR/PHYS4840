@@ -13,7 +13,7 @@ import sys
 # Homework 2 problem 1 help
 #
 ##############################
-load_file = 'MIST_v1.2_feh_m1.75_afe_p0.0_vvcrit0.4_HST_WFPC2.iso.cmd'
+load_file = '../Class06/MIST_v1.2_feh_m1.75_afe_p0.0_vvcrit0.4_HST_WFPC2.iso.cmd'
 
 ## I want columns 14 and 18 for the filters
 log10_isochrone_age_yr, F606, F814,\

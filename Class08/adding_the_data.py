@@ -24,7 +24,7 @@ the iso.cmd file. It is the same code as in isochrone_in-class_demo.py
 but with the comments and instructions removed. Consult the commented 
 version of this file if you are confused about any of these steps 
 '''
-load_file = 'MIST_v1.2_feh_m1.75_afe_p0.0_vvcrit0.4_HST_WFPC2.iso.cmd'
+load_file = '../Class06/MIST_v1.2_feh_m1.75_afe_p0.0_vvcrit0.4_HST_WFPC2.iso.cmd'
 
 log10_isochrone_age_yr, F606, F814,\
 logL, logTeff, phase= np.loadtxt(load_file, usecols=(1,14,18,6,4,22), unpack=True, skiprows=14)
@@ -55,7 +55,7 @@ cleaned_logL = logL_for_desired_ages[desired_phases]
 '''
 Now, recall how we loaded, cleaned, and plotted NGC6341.dat
 '''
-filename = 'NGC6341.dat'
+filename = '../Class06/NGC6341.dat'
 
 ## # Col.  9: F336W calibrated magnitude
 ## # Col. 15: F438W calibrated magnitude
@@ -98,29 +98,44 @@ plt.close()
 
 fig, axes = plt.subplots(1, 3, figsize=(14, 6))  # 3 panels side by side
 
-# First panel: Color-Magnitude Diagram
-axes[0].plot(cleaned_color, cleaned_magnitude, 'go', markersize=2, linestyle='-', label='color-mag')
+#########################################################
+#
+# This is a function that adds additional tick marks
+# on the figure panels and increases their size and frequency
+# it accepts the argument "ax", which is a figure-like object,
+# and applies formatting to ax
+#
+###########################################################
+def format_axes(ax):
+    ax.tick_params(axis='both', which='major', labelsize=14, length=6, width=1.5)  # Larger major ticks
+    ax.tick_params(axis='both', which='minor', labelsize=12, length=3, width=1)    # Minor ticks
+    ax.minorticks_on()  # Enable minor ticks
+
+# First panel: Isochrone in color/magnitude coordinates
+axes[0].plot(cleaned_color, cleaned_magnitude, 'go', markersize=2, linestyle='-')
 axes[0].invert_yaxis()
-axes[0].set_xlabel('Color', fontsize=15)
-axes[0].set_ylabel('Magnitude', fontsize=15)
+axes[0].set_xlabel('Color', fontsize=18)
+axes[0].set_ylabel('Magnitude', fontsize=18)
+format_axes(axes[0])
 
-# Second panel: Theoretical Isochrone
-axes[1].plot(cleaned_Teff, cleaned_logL, 'go', label='isochrone theoretical')
+# Second panel: Isochrone in theoretical coordinates
+axes[1].plot(cleaned_Teff, cleaned_logL, 'go')
 axes[1].invert_xaxis()
-axes[1].set_xlabel('Teff (K)', fontsize=15)
-axes[1].set_ylabel('logL', fontsize=15)
+axes[1].set_xlabel('Teff (K)', fontsize=18)
+axes[1].set_ylabel('logL', fontsize=18)
 axes[1].set_xlim(7500, 2800)
+format_axes(axes[1])
 
-# Third panel: Hubble Space Telescope Data
+# Third panel: HST Data for globular cluster
 axes[2].plot(color[quality_cut], magnitude[quality_cut], "k.", markersize=4, alpha=0.2)
 axes[2].invert_yaxis()
-axes[2].set_xlabel("Color: B-R", fontsize=15)
-axes[2].set_ylabel("Magnitude: B", fontsize=15)
+axes[2].set_xlabel("Color: B-R", fontsize=18)
+axes[2].set_ylabel("Magnitude: B", fontsize=18)
 axes[2].set_title('Hubble Space Telescope Data for\n the Globular Cluster NGC6341', fontsize=16)
 axes[2].set_xlim(-2, 5)
 axes[2].set_ylim(25, 13.8)
+format_axes(axes[2])
 
 plt.tight_layout()
-#plt.show()
-plt.savefig("three_panel_CMD_figure.png")
+plt.savefig("three_panel_CMD_figure.png", dpi=300)
 plt.close()
