@@ -23,7 +23,14 @@ x_upper_bound = 2.0
 
 N_samples = 100
 
-h = 1e-16 #1e-2 ###...?
+#####################
+#
+# Try different values of h
+# What did we "prove" h should be
+# for C = 10^(-16) in Python?
+#
+#######################
+h = ... ## what goes here?
 
 xdata = np.linspace(x_lower_bound, x_upper_bound, N_samples)
 
