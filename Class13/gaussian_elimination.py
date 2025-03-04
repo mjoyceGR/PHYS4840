@@ -5,15 +5,15 @@
 # Author: M Joyce
 #
 #####################################
-
+import numpy as np
 from numpy import array,empty
 
-A = array([ [2,1,4,1], 
+A = np.array([ [2,1,4,1], 
 			[3,4,-1,-1], 
 			[1,-4,1,5], 
 			[2,-2,1,3] ],float)
 
-vector = array([-4,3,9,7],float)
+vector = np.array([-4,3,9,7],float)
 
 ## dimension 
 N = len(vector)
