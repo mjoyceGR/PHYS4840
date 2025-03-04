@@ -45,3 +45,5 @@ print('The upper triangular matrix U is:\n', U)
 ## Write the next part of this program:
 ##  How do we solve the system of equations using forward and backward substitution?
 ##  Use L and U to solve Ax = b for a given vector b.
+
+## HINT: see the end of 6.1.4 in your textbook (equations 6.37 through 6.39 in my version)
