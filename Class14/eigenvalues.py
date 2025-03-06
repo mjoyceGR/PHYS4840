@@ -1,7 +1,7 @@
 #!/usr/bin/python3.8
 #####################################
 #
-# Class 13: Matrices and Linear algebra 
+# Class 14: Matrices and Linear algebra 
 # Author: M Joyce
 #
 #####################################
