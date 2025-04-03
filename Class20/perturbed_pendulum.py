@@ -26,7 +26,7 @@ omega2 = random.uniform(-0.1, 0.1)  # Small random initial velocity
 r0 = np.array([theta1, theta2, omega1, omega2])  # State vector r = [theta1, theta2, omega1, omega2]
 
 # Time parameters
-dt = 0.01  # Time step
+dt = 0.0001  # Time step
 t_max = 10  # Simulation duration
 t = np.arange(0, t_max, dt)
 
@@ -44,7 +44,8 @@ def equations(r):
     denom2 = (m * l ** 2)
 
     fomega1 = (-g * (2 * m) * np.sin(theta1) - m * g * np.sin(theta1 - 2 * theta2) - 
-                2 * np.sin(delta_theta) * m * (omega2 ** 2 * l + omega1 ** 2 * l * np.cos(delta_theta))) / denom1
+                2 * np.sin(delta_theta) * m *\
+                (omega2 ** 2 * l + omega1 ** 2 * l * np.cos(delta_theta))) / denom1
 
     fomega2 = (2 * np.sin(delta_theta) * (omega1 ** 2 * l * m + g * m * np.cos(theta1) + 
                 omega2 ** 2 * l * m * np.cos(delta_theta))) / denom2
@@ -76,5 +77,5 @@ x2 = x1 + l * np.sin(theta2_vals)
 y2 = y1 - l * np.cos(theta2_vals)
 
 # Save data
-np.savetxt("double_pendulum_data.txt", np.column_stack([t, x1, y1, x2, y2]),
+np.savetxt("perturbed_pendulum_data.txt", np.column_stack([t, x1, y1, x2, y2]),
            header="time x1 y1 x2 y2", comments="")
