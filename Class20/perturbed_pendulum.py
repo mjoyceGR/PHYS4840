@@ -26,7 +26,7 @@ omega2 = random.uniform(-0.1, 0.1)  # Small random initial velocity
 r0 = np.array([theta1, theta2, omega1, omega2])  # State vector r = [theta1, theta2, omega1, omega2]
 
 # Time parameters
-dt = 0.0001  # Time step
+dt = 0.001  # Time step
 t_max = 10  # Simulation duration
 t = np.arange(0, t_max, dt)
 
