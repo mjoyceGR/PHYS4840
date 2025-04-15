@@ -1,7 +1,7 @@
 #!/usr/bin/python3.8
 #####################################
 #
-# Class 23: PDEs I — 3D Laplace Solver
+# Class 23: PDEs I: 3D Laplace Solver
 # Author: Adapted by M Joyce from Mark Newman
 #
 #####################################
