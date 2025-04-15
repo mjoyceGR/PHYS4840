@@ -9,7 +9,7 @@
 
 import numpy as np
 
-def poisson_operator(Phi, dx, dy, dz):
+def laplacian_operator(Phi, dx, dy, dz):
     """
     Compute the Laplacian of a scalar field Phi (i.e., apply the Poisson operator)
     using central finite differences on a 3D uniform grid.
