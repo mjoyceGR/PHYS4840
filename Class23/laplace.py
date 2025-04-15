@@ -52,8 +52,14 @@ while delta>target:
     # Calculate maximum difference from old values
     delta = max(abs(phi-phinew))
 
-    # Swap the two arrays around
-    phi,phinew = phinew,phi
+    phi = phinew  # the new value of phi is set to what we just found for phinew
+    phinew = phi  # phinew will be immediately overwritten in the next iteration, so 
+                  # we assign it a placeholder value of the correct size until then, 
+                  # which might as well be phi
+
+
+    # shorthand way of doing this is to simply swap the two arrays around
+    #   phi,phinew = phinew,phi
 
 # Make a plot
 imshow(phi)
