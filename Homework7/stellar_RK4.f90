@@ -1,4 +1,4 @@
-program SolveMassConservation
+program Solver
     implicit none
     real(8) :: r, m, dr, k1, k2, k3, k4, r_end
     real(8) :: rho_c, R_star, rho, pi
@@ -17,7 +17,7 @@ program SolveMassConservation
     n = int((r_end - r) / dr)
     
     ! Open output file
-    open(unit=10, file="mass_profile.dat", status="replace")
+    open(unit=10, file="profile.dat", status="replace")
     write(10,*) "r m"
     write(10,*) r, m
 
@@ -42,7 +42,7 @@ program SolveMassConservation
     end do
 
     close(10)
-    print *, "Mass profile saved to mass_profile.dat"
+    print *, "Profile saved to profile.dat"
     
 contains
 
@@ -57,4 +57,4 @@ contains
         end if
     end function density_profile
 
-end program SolveMassConservation
+end program Solver
