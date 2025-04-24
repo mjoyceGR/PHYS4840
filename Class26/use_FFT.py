@@ -10,7 +10,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Step 1: Set up the domain and function
-N = 64                             # Number of grid points
+N = 10                             
 L = 2 * np.pi                      # Domain length [-π, π]
 x = np.linspace(-np.pi, np.pi, N, endpoint=False)  # Grid points
 f = np.cos(x)                      # Function to integrate

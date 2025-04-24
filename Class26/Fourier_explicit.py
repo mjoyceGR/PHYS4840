@@ -10,7 +10,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Domain setup
-N = 10 
+N = 10  
 x = np.linspace(-np.pi, np.pi, N, endpoint=False)
 f = np.cos(x)  # Function to integrate
 
