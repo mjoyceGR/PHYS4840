@@ -9,16 +9,16 @@ import sys
 import subprocess
 import matplotlib.pyplot as plt
 
-sys.path.append('/home/mjoyce/Wyoming/teaching/PHYS4840/MESA_Class/')
-import janky_MESA_parser as jank
+sys.path.append('/home/mjoyce/MESA/py_mesa_reader/')
+import mesa_reader as mr
+
 
 f = 'history.data' ## the file you copied over from ARCC
 
-mesa_data = jank.load_mesa_table(f)
+md = mr.MesaData(f)
 
-log_Teff = mesa_data["log_Teff"]
-log_L = mesa_data["log_L"]
-
+log_Teff = md.log_Teff
+log_L = md.log_L
 
 fig, ax = plt.subplots(1, figsize=(8,12))
 plt.plot(log_Teff, log_L, "go-")
